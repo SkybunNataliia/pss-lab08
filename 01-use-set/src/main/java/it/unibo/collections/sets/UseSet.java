@@ -1,6 +1,7 @@
 package it.unibo.collections.sets;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 /**
@@ -36,31 +37,37 @@ public final class UseSet {
         /*
          * 3) Prints its content
          */
-        System.out.println(tree);
+        System.out.println("Original set: " + tree);
         /*
          * 4) Removes all those strings whose represented number is divisible by three.
          * Note: the method removeIf(Predicate) is not allowed.
+         * 
+         * Ps: Per rimuovere elementi da una Collection durante l'iterazione, si deve usare un Iterator.
          */
-        for (String str : tree) {
+        final Iterator<String> iterator = tree.iterator();
+        while (iterator.hasNext()) {
+            String str = iterator.next();
             if (Integer.parseInt(str) % 3 == 0) {
-                tree.remove(str);
+                iterator.remove();
             }
         }
         /*
          * 5) Prints the content of the Set using a for-each construct
          */
+        System.out.println("Set after removal of numbers divisible by thee: \n");
         for (String str : tree) {
-            System.out.println(str);
+            System.out.print(str);
         }
         /*
          * 6) Verifies whether all the numbers left in the set are even
          */
-        boolean even = false;
+        boolean even = true;
         for (String str : tree) {
-            if (Integer.parseInt(str)%2 == 0) {
-                even = true;
+            if (Integer.parseInt(str) % 2 != 0) {
+                even = false;
+                break;
             }
         }
-        System.out.println("All the numbers in set are: " + String.valueOf(even));
+        System.out.println("All the numbers in set are: " + even);
     }
 }
