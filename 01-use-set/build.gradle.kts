@@ -4,5 +4,5 @@ plugins {
 }
 
 application {
-    mainClass.set ("it.unibo.collections.UseCollection")
+    mainClass.set ("it.unibo.collections.sets.UseSet")
 }
