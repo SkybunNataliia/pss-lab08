@@ -54,10 +54,12 @@ public final class UseSet {
         /*
          * 5) Prints the content of the Set using a for-each construct
          */
-        System.out.println("Set after removal of numbers divisible by thee: \n");
+        System.out.println("Set after removal of numbers divisible by thee:");
+        System.out.print("[");
         for (String str : tree) {
-            System.out.print(str);
+            System.out.print(str + ", ");
         }
+        System.out.print("]");
         /*
          * 6) Verifies whether all the numbers left in the set are even
          */
@@ -68,6 +70,6 @@ public final class UseSet {
                 break;
             }
         }
-        System.out.println("All the numbers in set are: " + even);
+        System.out.println("\n All the numbers in set are even: " + even);
     }
 }
